@@ -64,8 +64,12 @@ export class AppComponent {
 
   load(){
     const data = localStorage.getItem('todos');
+    if(data){
     this.todos = JSON.parse(data || '{}');
+  }else{
+    this.todos = [];
   }
+}
 
   changeMode(mode:string) {
     this.mode = mode;
